@@ -1,0 +1,36 @@
+{
+    "version": 1,
+    "name": "Mine",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "9c7a1a84-0817-46dd-9d66-924948e43765",
+            "actions": [
+                {
+                    "name": "Movement",
+                    "type": "Value",
+                    "id": "ba0973e9-5198-466c-ba47-c28b41fa7d00",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true,
+                    "priority": 0
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "6cc77adf-c115-42fa-9804-f3c0014968f8",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

@@ -1,0 +1,39 @@
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+
+// Purpose: to make the dustball move towards the cursor
+public class MoveTowardsCursor : MonoBehaviour
+{
+    [SerializeField] private float moveSpeed = 10f;
+
+    void Update()
+    {
+
+        Vector3 mousePosition = MouseScreenToWorld();
+        GameObjMoveTowardsCursor(mousePosition);
+    }
+
+    private Vector3 MouseScreenToWorld()
+    {
+        // Mouse class -> new input system
+        // convert the raw mouse position, screen to world coord
+        // make the sprite follow close to the camera z? 
+
+        Vector2 mousePositionRaw = Mouse.current.position.ReadValue();
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(mousePositionRaw);
+        mousePosition.z = Camera.main.transform.position.z + Camera.main.nearClipPlane;
+
+        return mousePosition;
+
+    }
+
+    private void GameObjMoveTowardsCursor(Vector3 mousePosition)
+    {
+        // need to access the actual transform.position, putting it in a variable and changing that, wont work 
+        // make the gameobj (this script is attached to) move towards the cursor 
+
+        Vector3 curr_pos = transform.position;
+        transform.position = Vector2.MoveTowards(curr_pos, mousePosition, moveSpeed * Time.deltaTime);
+    }
+}
