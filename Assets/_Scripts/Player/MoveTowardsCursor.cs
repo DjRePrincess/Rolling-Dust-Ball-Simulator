@@ -1,8 +1,9 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-
 // Purpose: to make the dustball move towards the cursor
+// Side Effect: The dustball changes z to be near the camera clip plane
+//  The dustball starts near the bg z, then changes z on runtime
 public class MoveTowardsCursor : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 10f;

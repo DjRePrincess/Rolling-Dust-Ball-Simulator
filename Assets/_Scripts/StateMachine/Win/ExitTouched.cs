@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyTouched : MonoBehaviour
+public class ExitTouched : MonoBehaviour
 {
     private string playerTag = "Player";
     private void OnCollisionEnter(Collision collision)
@@ -8,13 +8,13 @@ public class EnemyTouched : MonoBehaviour
         bool collidedWithPlayer = collision.collider.CompareTag(playerTag);
         if (collidedWithPlayer)
         {
-            Debug.Log("collided with player");
-            UpdateGameStateToLose();
+            print("win state");
+            UpdateGameStateToWin();
         }
     }
 
-    private void UpdateGameStateToLose()
+    private void UpdateGameStateToWin()
     {
-        GameManager.Instance.UpdateGameState(GameState.Lose);
+        GameManager.Instance.UpdateGameState(GameState.Win);
     }
 }
