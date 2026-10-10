@@ -15,18 +15,37 @@ public class WinManager : MonoBehaviour
 
     private void WinSequence()
     {
-        print("player wins");
         NextLevel();
     }
 
     private void NextLevel()
     {
+        // minus 1 because we are going to compare this to an index, which starts at 0
+        int totalSceneCount = SceneManager.sceneCountInBuildSettings - 1;
         int currScene = SceneManager.GetActiveScene().buildIndex;
         int nextScene = currScene + 1;
-        SceneManager.LoadScene(nextScene);
-        // what to do when we run out of scenes?
 
-        SceneManager.GetAllScenes();
+        // if nextScene will be out of range of the scene index list
+        if (nextScene > totalSceneCount)
+        {
+            LoadFirstScene();
+        }
+        else
+        {
+            LoadNextScene(nextScene);
+        }
+
+    }
+
+    private void LoadFirstScene()
+    {
+        int firstScene = 0;
+        SceneManager.LoadScene(firstScene);
+    }
+
+    private void LoadNextScene(int scene)
+    {
+        SceneManager.LoadScene(scene);
     }
 
     // ------------------- default 
