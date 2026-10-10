@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// Purpose: If Game State is Lose, then roll the LoseSequence()
 public class LoseManager : MonoBehaviour
 {
     [SerializeField] private GameObject player;

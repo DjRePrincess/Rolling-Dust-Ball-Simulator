@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// Purpose: If Player touches an Enemy, update Game State to Lose
 public class EnemyTouched : MonoBehaviour
 {
     private string playerTag = "Player";

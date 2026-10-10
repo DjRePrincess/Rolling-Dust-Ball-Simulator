@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// Purpose: Update Game State to Win if Player gets to the exit 
 public class ExitTouched : MonoBehaviour
 {
     private string playerTag = "Player";

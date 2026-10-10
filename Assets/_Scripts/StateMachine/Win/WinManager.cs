@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// Purpose: If Game State is Win, then roll the WinSequence()
 public class WinManager : MonoBehaviour
 {
 
@@ -14,6 +15,7 @@ public class WinManager : MonoBehaviour
     private void WinSequence()
     {
         print("player wins");
+        // nextLevel()? and if its the last level, just go to first level 
     }
 
     // ------------------- default 
