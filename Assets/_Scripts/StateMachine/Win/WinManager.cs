@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 // Purpose: If Game State is Win, then roll the WinSequence()
 public class WinManager : MonoBehaviour
@@ -15,7 +16,17 @@ public class WinManager : MonoBehaviour
     private void WinSequence()
     {
         print("player wins");
-        // nextLevel()? and if its the last level, just go to first level 
+        NextLevel();
+    }
+
+    private void NextLevel()
+    {
+        int currScene = SceneManager.GetActiveScene().buildIndex;
+        int nextScene = currScene + 1;
+        SceneManager.LoadScene(nextScene);
+        // what to do when we run out of scenes?
+
+        SceneManager.GetAllScenes();
     }
 
     // ------------------- default 

@@ -8,5 +8,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BedRoom.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/LivingRoom.unity
+    guid: c3a4c0adfa61c1f46b91726af2d58b3e
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 9503c4734150f7745b095719e72bb5bb, type: 3}

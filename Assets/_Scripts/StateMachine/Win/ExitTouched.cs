@@ -9,7 +9,7 @@ public class ExitTouched : MonoBehaviour
         bool collidedWithPlayer = collision.collider.CompareTag(playerTag);
         if (collidedWithPlayer)
         {
-            print("win state");
+            // print("win state");
             UpdateGameStateToWin();
         }
     }
