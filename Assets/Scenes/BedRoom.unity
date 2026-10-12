@@ -129,6 +129,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4155022862861833600, guid: fae6d245bcfd9484cb85288cad7eb8fa, type: 3}
   m_PrefabInstance: {fileID: 8835729363353515620}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &721249819
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 721249820}
+  - component: {fileID: 721249821}
+  m_Layer: 0
+  m_Name: Timer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &721249820
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 721249819}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.988, y: 0, z: 9.90223}
+  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &721249821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 721249819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbf78f0ef390547479f1dcd4a65e15f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SimpleTimer
 --- !u!1 &830383035
 GameObject:
   m_ObjectHideFlags: 0
@@ -486,12 +530,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5280177245551647444, guid: ef38a7bdd1bf6bf4f8b67983ba070d66, type: 3}
+      propertyPath: timer
+      value: 
+      objectReference: {fileID: 721249821}
     - target: {fileID: 7729162368587799008, guid: ef38a7bdd1bf6bf4f8b67983ba070d66, type: 3}
       propertyPath: m_Name
       value: Enemy0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2781500224689255160, guid: ef38a7bdd1bf6bf4f8b67983ba070d66, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef38a7bdd1bf6bf4f8b67983ba070d66, type: 3}
@@ -618,3 +667,4 @@ SceneRoots:
   - {fileID: 6846953703671346233}
   - {fileID: 1823895259}
   - {fileID: 8314670863732485958}
+  - {fileID: 721249820}
