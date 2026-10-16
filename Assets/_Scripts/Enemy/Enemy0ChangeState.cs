@@ -9,6 +9,8 @@ public class Enemy0ChangeState : MonoBehaviour
     private int state = 1;
     private int attackState = 1;
     private int idleState = -1;
+
+    private float stateChangeChance = 1;
     void Start()
     {
         // gameObject.AddComponent<SimpleTimer>(SimpleTimer timer);
@@ -20,8 +22,13 @@ public class Enemy0ChangeState : MonoBehaviour
 
     private void Update()
     {
-        if (timer.timerEnded())
+        // print(state);
+
+        float num = Random.Range(1, 500);
+        print(num);
+        if (num == stateChangeChance)
         {
+
             // could be a method for name clarity
             state = state * -1;
 
@@ -35,7 +42,7 @@ public class Enemy0ChangeState : MonoBehaviour
                 ChangeToIdleState();
             }
 
-            StartTimer();
+            // StartTimer();
         }
     }
 
