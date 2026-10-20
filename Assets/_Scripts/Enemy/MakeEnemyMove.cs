@@ -15,7 +15,7 @@ public class MakeEnemyMove : MonoBehaviour
     {
         if (transform.position != target)
         {
-            EnemyMove(target);
+            EnemyMoveTo(target);
         }
         else
         {
@@ -27,7 +27,7 @@ public class MakeEnemyMove : MonoBehaviour
         
     }
 
-    private void EnemyMove(Vector3 targetPos)
+    private void EnemyMoveTo(Vector3 targetPos)
     {
         // i think this has to be in update(), and it actually returns a Vector new position 
         transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
@@ -43,11 +43,6 @@ public class MakeEnemyMove : MonoBehaviour
 
         // clamp the z position to one value
         newPos.z = transform.position.z;
-
-        // make it so the movement isnt shakey
-        //newPos.x = newPos.x + 5f;
-        //newPos.y = newPos.y + 5f;
-        // print(newPos);
 
         return newPos;
     }

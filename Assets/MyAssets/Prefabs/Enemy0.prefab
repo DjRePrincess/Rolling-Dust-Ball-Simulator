@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5999507006692525760}
   - component: {fileID: 5280177245551647444}
   - component: {fileID: 8780318768122405712}
+  - component: {fileID: 3816015318056071167}
   m_Layer: 0
   m_Name: Enemy0
   m_TagString: Untagged
@@ -141,3 +142,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb84d70771b9d804eba8b2a37ab88287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MakeEnemyMove
+  speed: 5
+--- !u!114 &3816015318056071167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7729162368587799008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85d5a74c7d411c140b4dd17524d0c9ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyTouched
