@@ -25,7 +25,7 @@ public class Enemy0ChangeState : MonoBehaviour
         // print(state);
 
         float num = Random.Range(1, 500);
-        print(num);
+        // print(num);
         if (num == stateChangeChance)
         {
 
