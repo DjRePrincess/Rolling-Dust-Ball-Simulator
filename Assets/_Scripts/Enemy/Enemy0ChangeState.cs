@@ -1,24 +1,16 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy0ChangeState : MonoBehaviour
 {
     [SerializeField] private Vector3 enemyScaleIdle = new Vector3(2.5f, 2.5f, 2.5f);
     [SerializeField] private Vector3 enemyScaleAttack = new Vector3(8.0f, 8.0f, 8.0f);
-    
-    [SerializeField] private SimpleTimer timer;
     private int state = 1;
     private int attackState = 1;
     private int idleState = -1;
 
     private float stateChangeChance = 1;
-    void Start()
-    {
-        // gameObject.AddComponent<SimpleTimer>(SimpleTimer timer);
-
-        // SimpleTimer timer = gameObject.AddComponent<SimpleTimer>();
-
-        StartTimer();
-    }
+    private float changeSpeed = 100f;
 
     private void Update()
     {
@@ -41,36 +33,26 @@ public class Enemy0ChangeState : MonoBehaviour
             {
                 ChangeToIdleState();
             }
-
-            // StartTimer();
         }
     }
 
     // ----------------------------------------
 
-    private void StartTimer()
-    {
-        // the float we pass in is random 
-        float time = GetRandomTime();
-        timer.setTargetTime(time);
-    }
-
-    private float GetRandomTime()
-    {
-        float time = Random.Range(5.0f, 10.0f);
-        return time;
-    }
-
     private void ChangeToIdleState()
     {
-        // this is a vector3
         gameObject.transform.localScale = enemyScaleIdle;
+
+        // gameObject.transform.localScale = Vector3.Lerp(gameObject.transform.localScale, enemyScaleIdle, changeSpeed * Time.deltaTime);
     }
 
 
     private void ChangeToAttackState()
     {
-        // this is a vector3
         gameObject.transform.localScale = enemyScaleAttack;
+
+        // idk about lerping, because this method is fired once only, lerp needs to be on actual update()
+        // gameObject.transform.localScale = Vector3.Lerp(gameObject.transform.localScale, enemyScaleAttack, changeSpeed * Time.deltaTime);
+
+
     }
 }
