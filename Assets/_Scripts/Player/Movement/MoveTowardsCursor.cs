@@ -26,7 +26,6 @@ public class MoveTowardsCursor : MonoBehaviour
         mousePosition.z = Camera.main.transform.position.z + Camera.main.nearClipPlane;
 
         return mousePosition;
-
     }
 
     private void GameObjMoveTowardsCursor(Vector3 mousePosition)
