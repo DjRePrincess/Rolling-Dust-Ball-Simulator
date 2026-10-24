@@ -9,7 +9,7 @@ public class MoveTowardsCursor : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 10f;
 
-    // Dash stuff
+    [Header("Dash Stuff")]
     private MyInput myInput;
     private float dashSpeed = 20f;
 
