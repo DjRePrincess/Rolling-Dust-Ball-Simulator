@@ -22,8 +22,8 @@ public class MakeEnemyMove : MonoBehaviour
             target = GetNewTargetPos();
         }
 
-        print("current pos: " + transform.position);
-        print("target pos: " + target);
+        //print("current pos: " + transform.position);
+        //print("target pos: " + target);
         
     }
 
