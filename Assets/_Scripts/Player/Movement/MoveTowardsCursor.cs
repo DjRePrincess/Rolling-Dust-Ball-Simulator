@@ -17,8 +17,8 @@ public class MoveTowardsCursor : MonoBehaviour
     private bool canDash = true;
 
 
-    
-    void Update()
+
+    private void FixedUpdate()
     {
         Vector3 mousePosition = MouseScreenToWorld();
         bool playerDashed = myInput.Player.Dash.triggered;
@@ -32,8 +32,6 @@ public class MoveTowardsCursor : MonoBehaviour
         {
             GameObjMoveTowardsCursor(mousePosition, moveSpeed);
         }
-
-        
     }
 
     private Vector3 MouseScreenToWorld()
