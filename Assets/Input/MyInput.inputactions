@@ -1,31 +1,31 @@
 {
     "version": 1,
-    "name": "Mine",
+    "name": "MyInput",
     "maps": [
         {
             "name": "Player",
-            "id": "9c7a1a84-0817-46dd-9d66-924948e43765",
+            "id": "3f722577-fa6e-484e-a45c-b8c696626e23",
             "actions": [
                 {
-                    "name": "Movement",
-                    "type": "Value",
-                    "id": "ba0973e9-5198-466c-ba47-c28b41fa7d00",
+                    "name": "Dash",
+                    "type": "Button",
+                    "id": "5f779448-62b9-4f7c-9fc7-351fc0224658",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": true,
+                    "initialStateCheck": false,
                     "priority": 0
                 }
             ],
             "bindings": [
                 {
                     "name": "",
-                    "id": "6cc77adf-c115-42fa-9804-f3c0014968f8",
-                    "path": "",
+                    "id": "e2001741-d538-489c-b344-1018a8faa57a",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Movement",
+                    "action": "Dash",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
