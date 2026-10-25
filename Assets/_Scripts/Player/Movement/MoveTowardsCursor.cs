@@ -16,8 +16,6 @@ public class MoveTowardsCursor : MonoBehaviour
     // true for now for debugging purposes 
     private bool canDash = true;
 
-
-
     private void FixedUpdate()
     {
         Vector3 mousePosition = MouseScreenToWorld();
