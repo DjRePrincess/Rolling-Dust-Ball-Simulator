@@ -8,15 +8,11 @@ using UnityEngine.Scripting;
 public class MoveTowardsCursor : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 10f;
-    private MyInput myInput;
     
 
     private void FixedUpdate()
     {
         Vector3 mousePosition = MouseScreenToWorld();
-
-        // this is how you see if an action is triggered, useless for now
-        //bool playerDashed = myInput.Player.Dash.triggered;
         GameObjMoveTowardsCursor(mousePosition, moveSpeed);
     }
 
@@ -40,23 +36,5 @@ public class MoveTowardsCursor : MonoBehaviour
 
         Vector3 curr_pos = transform.position;
         transform.position = Vector2.MoveTowards(curr_pos, mousePosition, speed * Time.deltaTime);
-    }
-
-    // ----------
-    // Input instantiation 
-
-    private void Awake()
-    {
-        myInput = new MyInput();
-    }
-
-    private void OnEnable()
-    {
-        myInput.Enable();
-    }
-
-    private void OnDisable()
-    {
-        myInput.Disable();
     }
 }
