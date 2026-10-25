@@ -8,28 +8,16 @@ using UnityEngine.Scripting;
 public class MoveTowardsCursor : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 10f;
-
-    [Header("Dash Stuff")]
     private MyInput myInput;
-    private float dashSpeed = 20f;
-
-    // true for now for debugging purposes 
-    private bool canDash = true;
+    
 
     private void FixedUpdate()
     {
         Vector3 mousePosition = MouseScreenToWorld();
-        bool playerDashed = myInput.Player.Dash.triggered;
 
-        if (canDash && playerDashed)
-        {
-            print("dashed");
-            GameObjMoveTowardsCursor(mousePosition, dashSpeed);
-        }
-        else
-        {
-            GameObjMoveTowardsCursor(mousePosition, moveSpeed);
-        }
+        // this is how you see if an action is triggered, useless for now
+        //bool playerDashed = myInput.Player.Dash.triggered;
+        GameObjMoveTowardsCursor(mousePosition, moveSpeed);
     }
 
     private Vector3 MouseScreenToWorld()

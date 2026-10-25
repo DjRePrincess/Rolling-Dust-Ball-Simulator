@@ -15,13 +15,21 @@ public class Dash : MonoBehaviour
     {
         if (canDash)
         {
-            movementComponent.enabled = false;
+            DisableMovement();
         }
         else
         {
-            movementComponent.enabled = true;
+            EnableMovement();
         }
     }
 
+    private void EnableMovement()
+    {
+        movementComponent.enabled = true;
+    }
+    private void DisableMovement()
+    {
+        movementComponent.enabled = false;
+    }
 
 }
