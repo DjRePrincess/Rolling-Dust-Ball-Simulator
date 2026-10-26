@@ -39,22 +39,19 @@ public class Dash : MonoBehaviour
         {
             return;
         }
-        // would the move variables being decalred before start() hae consequences?
-        // would this be mouse input? NOPE 
-        //moveX = Input.GetAxisRaw("Horizontal");
-        //moveY = Input.GetAxisRaw("Vertical");
+        
+    }
+    private void FixedUpdate()
+    {
+        if (isDashing)
+        {
+            return;
+        }
 
-        //moveX = transform.position.x;
-        //moveY = transform.position.y;
-        //print(moveX);
-
-        // because this is like a 1 and 0 vector, just a direction vector
-        //moveDirection = new Vector2(moveX, moveY).normalized; // GetMovementDirection()
         moveDirection = GetMovementDirection();
         print(moveDirection);
 
         // this is how you see if an action is triggered
-        // doesnt the coroutine dash, need to be in fixed update()
         bool playerDashed = myInput.Player.Dash.triggered;
         if (playerDashed)
         {
@@ -64,13 +61,6 @@ public class Dash : MonoBehaviour
         else
         {
             EnableMovement();
-        }
-    }
-    private void FixedUpdate()
-    {
-        if (isDashing)
-        {
-            return;
         }
     }
 
