@@ -54,6 +54,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6456439932666595103}
   - component: {fileID: 4487795198513782095}
+  - component: {fileID: 2984182992710053699}
+  - component: {fileID: 8439877015923090213}
+  - component: {fileID: 2021979872045790094}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -108,6 +111,61 @@ MonoBehaviour:
   m_DefaultActionMap: 
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!54 &2984182992710053699
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3451555244453490129}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
+--- !u!114 &8439877015923090213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3451555244453490129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cddb3882f3a797c4184ae9e42aee82e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Dash
+  movementComponent: {fileID: 2021979872045790094}
+  isDashing: 0
+  dashSpeed: 20
+--- !u!114 &2021979872045790094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3451555244453490129}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c70e0ffdd1f3c649a915bfe8e98adf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MoveTowardsCursor
+  moveSpeed: 6
 --- !u!1 &4726428147490643816
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,9 +257,6 @@ GameObject:
   - component: {fileID: 6116904940223721485}
   - component: {fileID: 4848433382570400532}
   - component: {fileID: 7282202481241316774}
-  - component: {fileID: 573612326880202827}
-  - component: {fileID: 2252427005119147142}
-  - component: {fileID: 1261747718861436544}
   m_Layer: 0
   m_Name: DustBall
   m_TagString: Player
@@ -305,61 +360,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 34.938305, y: 24.839602, z: 43.657303}
   m_Center: {x: -0.07088065, y: 0.01844883, z: -12.527533}
---- !u!54 &573612326880202827
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5881285472303261033}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
---- !u!114 &2252427005119147142
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5881285472303261033}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cddb3882f3a797c4184ae9e42aee82e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Dash
-  movementComponent: {fileID: 1261747718861436544}
-  canDash: 0
-  dashSpeed: 20
---- !u!114 &1261747718861436544
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5881285472303261033}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c70e0ffdd1f3c649a915bfe8e98adf5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MoveTowardsCursor
-  moveSpeed: 6
 --- !u!1 &9078896830780742249
 GameObject:
   m_ObjectHideFlags: 0

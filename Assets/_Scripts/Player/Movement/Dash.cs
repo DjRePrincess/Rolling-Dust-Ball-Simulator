@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Dash : MonoBehaviour
 {
@@ -15,14 +17,13 @@ public class Dash : MonoBehaviour
 
     [Header("Dash Fields")]
     [SerializeField] private bool isDashing = false;
-    [SerializeField] private float dashSpeed = 20f;
+    [SerializeField] private float dashSpeed = 5f;
     private float dashDuration = 1f;
     private float dashCooldown = 1f;
     void Start()
     {
         movementComponent = GetComponent<MoveTowardsCursor>();
         rb = GetComponent<Rigidbody>();
-
 
     }
     // prob need to be in fixedUpdate(), the physics dash stuff 
@@ -33,9 +34,17 @@ public class Dash : MonoBehaviour
             return;
         }
         // would the move variables being decalred before start() hae consequences?
-        moveX = Input.GetAxisRaw("Horizontal");
-        moveY = Input.GetAxisRaw("Vertical");
-        moveDirection = new Vector2(moveX, moveY).normalized;
+        // would this be mouse input? NOPE 
+        //moveX = Input.GetAxisRaw("Horizontal");
+        //moveY = Input.GetAxisRaw("Vertical");
+
+        moveX = transform.position.x;
+        moveY = transform.position.y;
+        //print(moveX);
+
+        // because this is like a 1 and 0 vector, just a direction vector
+        moveDirection = new Vector2(moveX, moveY).normalized; // GetMovementDirection()
+        print(moveDirection);
 
         // this is how you see if an action is triggered
         // doesnt the coroutine dash, need to be in fixed update()
@@ -49,25 +58,24 @@ public class Dash : MonoBehaviour
         {
             EnableMovement();
         }
-
-        //// this if else statement should be in fixed update? physics based movement in should be in fixedupdate()
-        //if (isDashing)
-        //{
-            
-        //}
-        //else
-        //{
-        //    EnableMovement();
-        //}
     }
     private void FixedUpdate()
     {
-        // put isdashing check too?
+        if (isDashing)
+        {
+            return;
+        }
+    }
+
+    private Vector2 GetMovementDirection()
+    {
+
     }
 
     private IEnumerator MakePlayerDash()
     {
         isDashing = true;
+        // cant this be the current linear velocity 
         rb.linearVelocity = new Vector2(moveDirection.x * dashSpeed, moveDirection.y * dashSpeed);
 
         // ngl, idk what yield return new ACTUALLY does 
