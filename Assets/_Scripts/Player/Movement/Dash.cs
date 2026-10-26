@@ -66,7 +66,36 @@ public class Dash : MonoBehaviour
     private Vector2 GetMovementDirection()
     {
         Vector2 curPos = transform.position;
-        if (prevX < curPos.x)
+        if ((prevX < curPos.x) && (prevY < curPos.y))
+        {
+            // player moving to NE direction
+            prevX = curPos.x;
+            prevY = curPos.y;
+            return new Vector2(1, 1);
+        }
+        else if ((prevX < curPos.x) && (prevY > curPos.y))
+        {
+            // player moving to SE direction
+            prevX = curPos.x;
+            prevY = curPos.y;
+            return new Vector2(1, -1);
+        }
+        else if ((prevX > curPos.x) && (prevY > curPos.y))
+        {
+            // player moving to SW direction
+            prevX = curPos.x;
+            prevY = curPos.y;
+            return new Vector2(-1, -1);
+        }
+        else if ((prevX > curPos.x) && (prevY < curPos.y))
+        {
+            // player moving to NW direction
+            prevX = curPos.x;
+            prevY = curPos.y;
+            return new Vector2(-1, 1);
+        }
+        // how to check if player goes to right. some kind of range to check to ? 
+        else if (prevX < curPos.x)
         {
             // player moving to the right 
             prevX = curPos.x;
