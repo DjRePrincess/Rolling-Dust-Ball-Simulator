@@ -32,7 +32,6 @@ public class Dash : MonoBehaviour
         prevY = transform.position.y;
 
     }
-    // prob need to be in fixedUpdate(), the physics dash stuff 
     void Update()
     {
         if (isDashing)
