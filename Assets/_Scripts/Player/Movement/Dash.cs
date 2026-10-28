@@ -48,7 +48,7 @@ public class Dash : MonoBehaviour
         }
 
         moveDirection = GetMovementDirection();
-        print(moveDirection);
+        //print(moveDirection);
 
         // this is how you see if an action is triggered
         bool playerDashed = myInput.Player.Dash.triggered;
