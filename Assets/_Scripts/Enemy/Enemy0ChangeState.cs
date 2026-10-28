@@ -1,16 +1,24 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
+// This script won't work on the sphere enemies now 
 public class Enemy0ChangeState : MonoBehaviour
 {
-    [SerializeField] private Vector3 enemyScaleIdle = new Vector3(2.5f, 2.5f, 2.5f);
-    [SerializeField] private Vector3 enemyScaleAttack = new Vector3(8.0f, 8.0f, 8.0f);
+    //[SerializeField] private Vector3 enemyScaleIdle = new Vector3(2.5f, 2.5f, 2.5f);
+    //[SerializeField] private Vector3 enemyScaleAttack = new Vector3(8.0f, 8.0f, 8.0f);
+    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private Sprite idleSprite;
+    [SerializeField] private Sprite attackSprite;
     private int state = 1;
     private int attackState = 1;
     private int idleState = -1;
 
     private float stateChangeChance = 1;
     private float changeSpeed = 100f;
+    private void Start()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
 
     private void Update()
     {
@@ -40,18 +48,14 @@ public class Enemy0ChangeState : MonoBehaviour
 
     private void ChangeToIdleState()
     {
-        gameObject.transform.localScale = enemyScaleIdle;
-
-        // gameObject.transform.localScale = Vector3.Lerp(gameObject.transform.localScale, enemyScaleIdle, changeSpeed * Time.deltaTime);
+        // change to idle sprite via spriteRenderer
+     
     }
 
 
     private void ChangeToAttackState()
     {
-        gameObject.transform.localScale = enemyScaleAttack;
-
-        // idk about lerping, because this method is fired once only, lerp needs to be on actual update()
-        // gameObject.transform.localScale = Vector3.Lerp(gameObject.transform.localScale, enemyScaleAttack, changeSpeed * Time.deltaTime);
+        // change to attack sprite 
 
 
     }
