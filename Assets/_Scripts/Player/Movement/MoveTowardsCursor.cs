@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Scripting;
+using UnityEngine.Windows;
 
 // Purpose: to make the dustball move towards the cursor
 // Side Effect: The dustball changes z to be near the camera clip plane
@@ -8,12 +9,19 @@ using UnityEngine.Scripting;
 public class MoveTowardsCursor : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 10f;
-    
+    private MyInput myInput;
+
 
     private void FixedUpdate()
     {
-        Vector3 mousePosition = MouseScreenToWorld();
-        GameObjMoveTowardsCursor(mousePosition, moveSpeed);
+        bool playerLeftClickHold = myInput.Player.Move.IsPressed();
+
+        if (playerLeftClickHold)
+        {
+            Vector3 mousePosition = MouseScreenToWorld();
+            GameObjMoveTowardsCursor(mousePosition, moveSpeed);
+        }
+        
     }
 
     private Vector3 MouseScreenToWorld()
@@ -36,5 +44,23 @@ public class MoveTowardsCursor : MonoBehaviour
 
         Vector3 curr_pos = transform.position;
         transform.position = Vector2.MoveTowards(curr_pos, mousePosition, speed * Time.deltaTime);
+    }
+
+    // ----------
+    // Input instantiation 
+
+    private void Awake()
+    {
+        myInput = new MyInput();
+    }
+
+    private void OnEnable()
+    {
+        myInput.Enable();
+    }
+
+    private void OnDisable()
+    {
+        myInput.Disable();
     }
 }

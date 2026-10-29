@@ -17,18 +17,6 @@ public class Enemy0ChangeState : MonoBehaviour
 
     private float stateChangeChance = 1;
 
-    // Collider size stuff
-    
-    // doesnt change
-    private float colliderSizeY = 3.5f;
-    private float colliderOffsetX = -0.5f;
-
-    // Changes
-    private float idleColliderSizeX = 9f;
-    private float attackColliderOffsetY = -7.95f;
-    private float attackColliderSizeX = 16f;
-    private float idleColliderOffsetY = -9f;
-
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
