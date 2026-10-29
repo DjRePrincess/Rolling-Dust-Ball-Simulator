@@ -69,16 +69,18 @@ public class Enemy0ChangeState : MonoBehaviour
     private void ChangeToIdleState()
     {
         spriteRenderer.sprite = idleSprite;
-        capsuleCollider.size = new Vector2(idleColliderSizeX, colliderSizeY);
-        capsuleCollider.offset = new Vector2(colliderOffsetX, idleColliderOffsetY);
+        capsuleCollider.center = new Vector3(-0.3f, -9f, 0);
+        capsuleCollider.radius = 2f;
+        capsuleCollider.height = 8f;
     }
 
 
     private void ChangeToAttackState()
     {
         spriteRenderer.sprite = attackSprite;
-        capsuleCollider.size = new Vector2(attackColliderSizeX, colliderSizeY);
-        capsuleCollider.offset = new Vector2(colliderOffsetX, attackColliderOffsetY);
+        capsuleCollider.center = new Vector3(-0.5f, -7.85f, 0);
+        capsuleCollider.radius = 2.7f;
+        capsuleCollider.height = 13.3f;
 
     }
 }

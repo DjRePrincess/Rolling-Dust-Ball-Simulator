@@ -6,12 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/test level.unity
+    guid: d3ee09536c656fd46b6e23ba90402e1f
+  - enabled: 1
     path: Assets/Scenes/BedRoom.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
     path: Assets/Scenes/LivingRoom.unity
     guid: c3a4c0adfa61c1f46b91726af2d58b3e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/test scene.unity
     guid: 2251261c520fb7b4099655441465e85d
   m_configObjects:
