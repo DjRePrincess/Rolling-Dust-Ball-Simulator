@@ -20,6 +20,10 @@ public class PlayerSounds : MonoBehaviour
         if (playerLeftClickHold)
         {
             print("rock sound playing");
+            if (rockSlidingSource.isPlaying)
+            {
+                return;
+            }
             rockSlidingSource.Play();
         }
         else
