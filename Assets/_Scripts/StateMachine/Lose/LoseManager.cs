@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -5,21 +6,46 @@ using UnityEngine.SceneManagement;
 public class LoseManager : MonoBehaviour
 {
     [SerializeField] private GameObject player;
+    [SerializeField] private AudioSource loseSoundSource;
+
+    private void Start()
+    {
+        loseSoundSource = GetComponent<AudioSource>();
+    }
     private void GameManagerOnOnGameStateChanged(GameState state)
     {
         // script EnemyTouched will handle changing the gamestate to lose
         if (state == GameState.Lose)
         {
-            LoseSequence();
+            StartCoroutine(LoseSequence());
         }
     }
 
-    private void LoseSequence()
+    private IEnumerator LoseSequence()
     {
         // LoseScreen.SetActive(true);
-        player.SetActive(false); // disable player
-        // we can a WaitXSeconds(x = 2) here
+        //DisablePlayer();
+        PlayLoseSound();
+
+        yield return new WaitForSeconds(1);
+        
         ReloadLevel();
+    }
+
+    private void DisablePlayer()
+    {
+        player.SetActive(false);
+    }
+
+    private void PlayLoseSound()
+    {
+        if (loseSoundSource.isPlaying)
+        {
+            return;
+        }
+        loseSoundSource.Play();
+
+        // do i need to stop it ?
     }
 
     private void ReloadLevel()

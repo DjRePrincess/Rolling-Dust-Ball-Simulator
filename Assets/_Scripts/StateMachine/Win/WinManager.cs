@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -16,13 +17,14 @@ public class WinManager : MonoBehaviour
     {
         if (state == GameState.Win)
         {
-            WinSequence();
+            StartCoroutine(WinSequence());
         }
     }
 
-    private void WinSequence()
+    private IEnumerator WinSequence()
     {
         PlayWinSound();
+        yield return new WaitForSeconds(1);
         NextLevel();
     }
 
