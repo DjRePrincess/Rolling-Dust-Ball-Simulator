@@ -1,9 +1,16 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 // Purpose: If Game State is Win, then roll the WinSequence()
 public class WinManager : MonoBehaviour
 {
+    [SerializeField] private AudioSource winSoundSource;
+
+    private void Start()
+    {
+        winSoundSource = GetComponent<AudioSource>();
+    }
 
     private void GameManagerOnOnGameStateChanged(GameState state)
     {
@@ -15,7 +22,19 @@ public class WinManager : MonoBehaviour
 
     private void WinSequence()
     {
+        PlayWinSound();
         NextLevel();
+    }
+
+    private void PlayWinSound()
+    {
+        if (winSoundSource.isPlaying)
+        {
+            return;
+        }
+        winSoundSource.Play();
+
+        // do i need to stop it ?
     }
 
     private void NextLevel()
